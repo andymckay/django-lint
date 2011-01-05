@@ -24,7 +24,9 @@ def register(linter):
     from settings import SettingsChecker
     from model_fields import ModelFieldsChecker
     from model_methods import ModelMethodsChecker
+    from views import ViewsChecker
 
+    linter.register_checker(ViewsChecker(linter))
     linter.register_checker(SizeChecker(linter))
     linter.register_checker(AdminChecker(linter))
     linter.register_checker(SettingsChecker(linter))

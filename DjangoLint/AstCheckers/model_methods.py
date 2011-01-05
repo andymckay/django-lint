@@ -71,7 +71,7 @@ class ModelMethodsChecker(BaseChecker):
             self.add_message('W8010', node=node.root(),
                 args=(len(self.model_names), self.config.max_models))
 
-        if not self.model_names:
+        if not self.model_names or len(self.model_names) < 4:
             return
 
         for names in combinations(self.model_names, 4):
